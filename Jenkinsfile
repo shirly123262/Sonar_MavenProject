@@ -12,7 +12,7 @@ pipeline
   agent any
   environment{
       BUILD_USER= getBuildUser()
-     // GIT=gitCommitURL()
+     GIT=gitCommitURL()
       }
     stages{
       
@@ -23,10 +23,9 @@ pipeline
                  script{
                  
                 echo "$env.GIT_URL"
-                 echo "env.GIT_URL"
-                 echo "${GIT}"
-		echo "env.GIT_COMMIT"
+		echo "$env.GIT_COMMIT"
                  echo "${BUILD_USER}"
+	         echo "${GIT}"
                  }
                  }
                  }
