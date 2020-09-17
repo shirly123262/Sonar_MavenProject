@@ -13,6 +13,8 @@ pipeline
   environment{
       BUILD_USER= getBuildUser()
      GIT=gitCommitURL()
+build_url = "${env.BUILD_URL}"
+
       }
     stages{
       
@@ -26,8 +28,12 @@ pipeline
 		echo "$env.GIT_COMMIT"
                  echo "${BUILD_USER}"
 	         echo "${GIT}"
-	build_url = "${env.BUILD_URL}"
 			 echo "${build_url}"
+		def version_number = sh (script: "cat pom.xml).trim()
+			 def version_number = sh (script: "cat pom.xml | grep -m 1 'version'").trim()
+			 def version = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
+			 		     echo "$version"
+			 
                  }
                  }
                  }
