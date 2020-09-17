@@ -26,6 +26,8 @@ pipeline
 		echo "$env.GIT_COMMIT"
                  echo "${BUILD_USER}"
 	         echo "${GIT}"
+	build_url = "${env.BUILD_URL}"
+			 echo "${build_url}"
                  }
                  }
                  }
