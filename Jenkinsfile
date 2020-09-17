@@ -2,10 +2,10 @@ def getBuildUser(){
     return wrap([$class: 'BuildUser']) { return env.BUILD_USER }
 }
 
-/*def gitCommitURL() {
+def gitCommitURL() {
     gitcommit=env.GIT_URL.replace('.git','')+"/commit/"+env.GIT_COMMIT   
     return gitcommit
-}*/
+}
 
 pipeline
 {
@@ -22,9 +22,10 @@ pipeline
              {
                  script{
                  
-              /*   echo "$env.GIT_URL"
+                echo "$env.GIT_URL"
                  echo "env.GIT_URL"
-                 echo "${GIT}" */
+                 echo "${GIT}"
+		echo "env.GIT_COMMIT"
                  echo "${BUILD_USER}"
                  }
                  }
