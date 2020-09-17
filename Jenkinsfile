@@ -29,7 +29,7 @@ build_url = "${env.BUILD_URL}"
                  echo "${BUILD_USER}"
 	         echo "${GIT}"
 			 echo "${build_url}"
-		def version_number = sh (script: "cat pom.xml).trim()
+		def version_number = sh (script: "cat pom.xml)").trim()
 			 def version_number = sh (script: "cat pom.xml | grep -m 1 'version'").trim()
 			 def version = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
 			 		     echo "$version"
