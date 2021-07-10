@@ -38,9 +38,9 @@ build_url = "${env.BUILD_URL}"
                      Version = version_1[1].split('<')
                      Version =Version[0]                                          
 		     echo "$Version"
-			 if("${Version}".contains("SNAPSHOT")){         
+			/* if("${Version}".contains("SNAPSHOT")){         
                       error('Build Fail Due to pom.xml not having version number')
- }
+ } */
                  }
                  }
                  }
