@@ -47,7 +47,9 @@ build_url = "${env.BUILD_URL}"
                  }
 	post{
 	 always {
-           jiraSendBuildInfo site: 'team-1625869429732.atlassian.net'
+		 jiraSendDeploymentInfo site: 'team-1625869429732.atlassian.net', environmentId: 'DEV', environmentName: 'DEV', environmentType: 'DEV'
+
+           //jiraSendBuildInfo site: 'team-1625869429732.atlassian.net'
        }
                  }
 }
