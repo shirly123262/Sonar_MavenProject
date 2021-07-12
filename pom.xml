@@ -4,7 +4,7 @@
 
   <groupId>org.sonar</groupId>
   <artifactId>sonarscanner-maven-basic</artifactId>
-  <version>staging</version>
+  <version>development</version>
 
   <name>Example of basic Maven project</name>
 
