@@ -47,7 +47,7 @@ build_url = "${env.BUILD_URL}"
                  }
 	post{
 	 always {
-		 jiraSendDeploymentInfo site: 'team-1625869429732.atlassian.net', environmentId: 'development', environmentName: 'development', environmentType: 'development'
+		 jiraSendDeploymentInfo site: 'team-1625869429732.atlassian.net', environmentId: 'development', environmentName: 'development', environmentType: 'staging'
 
            //jiraSendBuildInfo site: 'team-1625869429732.atlassian.net'
        }
