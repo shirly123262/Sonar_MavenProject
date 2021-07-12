@@ -25,7 +25,7 @@ build_url = "${env.BUILD_URL}"
                  script{
                  
                 echo "$env.GIT_URL"
-		echo "$env.GIT_COMMIT"
+		//echo "$env.GIT_COMMIT"
                  echo "${BUILD_USER}"
 	         echo "${GIT}"
 			 echo "${build_url}"
