@@ -27,8 +27,8 @@ build_url = "${env.BUILD_URL}"
                 echo "$env.GIT_URL"
 		echo "$env.GIT_COMMIT"
                  echo "${BUILD_USER}"
-	        // echo "${GIT}"
 			 echo "${build_url}"
+		sh "docker build -t ${Image_Name}:$BUILD_NUMBER ."
 		/*def version_number = sh (script: "cat pom.xml",returnStdout: true).trim()
 			 def version = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
 			 echo "$version_number"		     
