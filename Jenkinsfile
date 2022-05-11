@@ -45,11 +45,11 @@ build_url = "${env.BUILD_URL}"
                  }
                  }
                  }
-	post{
+	/*post{
 	 always {
 		 jiraSendDeploymentInfo site: 'team-1625869429732.atlassian.net', environmentId: 'production', environmentName: 'production', environmentType: 'production'
 
            //jiraSendBuildInfo site: 'team-1625869429732.atlassian.net'
        }
-                 }
+                 }*/
 }
