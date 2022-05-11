@@ -29,7 +29,8 @@ build_url = "${env.BUILD_URL}"
 		echo "$env.GIT_COMMIT"
                  echo "${BUILD_USER}"
 			 echo "${build_url}"
-		sh "docker build -t ${Image_Tag}:$BUILD_NUMBER ."
+			 sh "tar -czvf test.tar.gz *"
+		//sh "docker build -t ${Image_Tag}:$BUILD_NUMBER ."
 			 //sh "mvn clean install"
 		/*def version_number = sh (script: "cat pom.xml",returnStdout: true).trim()
 			 def version = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
@@ -50,12 +51,12 @@ build_url = "${env.BUILD_URL}"
             steps {
                 script {
                  rtUpload(
-            serverId: "vvdn_cicd_jfrog_artifactory",
+            serverId: "jfrog",
             spec: """{
             "files": [
             {
             "pattern": "/*.tar.gz",
-            "target": "${JFROG_REPO_NAME}/${params.BUILD_TYPE}/${PROJECT_VERSION}/${PROJECT_NAME}-${PROJECT_VERSION}-${BUILD_NUMBER}.tar.gz"
+            "target": "test_repo/dev/1.1.1/test.tar.gz"
             }]
             }"""
         )
@@ -71,4 +72,3 @@ build_url = "${env.BUILD_URL}"
            //jiraSendBuildInfo site: 'team-1625869429732.atlassian.net'
        }
                  }*/
-}
