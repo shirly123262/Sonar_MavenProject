@@ -32,12 +32,12 @@ build_url = "${env.BUILD_URL}"
 		/*def version_number = sh (script: "cat pom.xml",returnStdout: true).trim()
 			 def version = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
 			 echo "$version_number"		     
-			 echo "$version"*/
+			 echo "$version"
 			 def version_number = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
                      def version_1 = version_number.split('>')
                      Version = version_1[1].split('<')
                      Version =Version[0]                                          
-		     echo "$Version"
+		     echo "$Version"*/
 			/* if("${Version}".contains("SNAPSHOT")){         
                       error('Build Fail Due to pom.xml not having version number')
  } */
