@@ -61,7 +61,7 @@ build_url = "${env.BUILD_URL}"
             }"""
         )
     }      
-		    bat "curl -s http://localhost:8082/artifactory/test_repo/?lastModified"
+		    bat "curl -s -u admin:Admin@123 http://localhost:8082/artifactory/test_repo/?lastModified"
                 }
             }
          }
