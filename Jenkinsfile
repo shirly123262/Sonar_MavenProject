@@ -30,8 +30,6 @@ build_url = "${env.BUILD_URL}"
                  echo "${BUILD_USER}"
 			 echo "${build_url}"
 			 bat "tar -czvf test.tar.gz *"
-		bat "docker build -t ${Image_Tag}:$BUILD_NUMBER ."
-			 //sh "mvn clean install"
 		/*def version_number = sh (script: "cat pom.xml",returnStdout: true).trim()
 			 def version = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
 			 echo "$version_number"		     
@@ -61,7 +59,7 @@ build_url = "${env.BUILD_URL}"
             }"""
         )
     }      
-		    bat "curl -s -u admin:Admin@123 http://localhost:8082/artifactory/test_repo/?lastModified"
+   bat "curl -s -u admin:Admin@123 http://localhost:8082/artifactory/test_repo/?lastModified"
                 }
             }
          }
