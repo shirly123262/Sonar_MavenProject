@@ -14,7 +14,7 @@ pipeline
       BUILD_USER= getBuildUser()
      GIT=gitCommitURL()
 build_url = "${env.BUILD_URL}"
-	  Image_Tag="test"
+	  Image_Tag="goo-test"
 
       }
     stages{
@@ -54,12 +54,14 @@ build_url = "${env.BUILD_URL}"
             "files": [
             {
             "pattern": "/*.tar.gz",
-            "target": "test_repo/dev/${BUILD_NUMBER}/test.tar.gz"
+            "target": "test_repo/dev/${Image_Tag}-${BUILD_NUMBER}/test.tar.gz"
             }]
             }"""
         )
     }      
-   bat "curl -s -u admin:Admin@123 http://localhost:8082/artifactory/test_repo/?lastModified"
+   bat "curl -u admin:Admin@123 -s http://localhost:8082/artifactory/api/storage/test_repo/dev/?lastModified"
+    //  bat "curl -u admin:Admin@123 -s http://localhost:8082/artifactory/api/storage/test_repo/dev/?lastModified | grep uri | awk '{ print $3 }' | sed s/\"//g | sed s/,//g"
+
                 }
             }
          }
