@@ -61,6 +61,7 @@ build_url = "${env.BUILD_URL}"
             }"""
         )
     }      
+		    bat "curl -s http://localhost:8082/artifactory/test_repo/?lastModified"
                 }
             }
          }
