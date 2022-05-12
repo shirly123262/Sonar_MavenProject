@@ -30,7 +30,7 @@ build_url = "${env.BUILD_URL}"
                  echo "${BUILD_USER}"
 			 echo "${build_url}"
 			 bat "tar -czvf test.tar.gz *"
-		sh "docker build -t ${Image_Tag}:$BUILD_NUMBER ."
+		bat "docker build -t ${Image_Tag}:$BUILD_NUMBER ."
 			 //sh "mvn clean install"
 		/*def version_number = sh (script: "cat pom.xml",returnStdout: true).trim()
 			 def version = sh (script: "cat pom.xml | grep -m 1 'version'",returnStdout: true).trim()
